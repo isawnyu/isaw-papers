@@ -126,7 +126,7 @@ Your browser does not support the video tag.
 
 <p id="p8">This section gives a brief illustrated overview of the main steps that result in a robust alignment between the 3D models and the auxiliary imagery so that these other images can be displayed on the model. The basis for our alignment of RTI and MBI with 3D models relies on establishing common camera positions between photogrammetry and the auxiliary imagery. The description assumes that the following stages of work have been completed: (1) source images of the object from many overlapping camera positions have been captured and processed to build a 3D model; and (2) at least one of the camera positions used in building that model has also been used for collection of auxiliary imagery (here RTI and MBI).</p>
 
- <figure>
+ <figure id="fig03">
 <img src="images/fig03a.png" />
 <img src="images/fig03b.png" />
 <figcaption>Figure 3. A) Above: Screenshot of <i>Agisoft Metashape</i> with RTI connection shot highlighted in pink. B) Below: Screenshot of <i>Agisoft Metashape</i> with MBI connection shot highlighted in pink.</figcaption>
@@ -134,7 +134,7 @@ Your browser does not support the video tag.
 
 <p id="p9">Figure 3 shows two screenshots of a 3D model of the test object as it appears in <i>Metashape</i>. In both Figure 3A and 3B, most camera positions are shown in blue. Figure 3A highlights in pink the position of the camera that was subsequently used to capture RTI source images. Figure 3B highlights the position of the camera that was then used to capture MBI images. Since these highlighted camera positions are the aspects of the workflow that enable integration, we call them “connection shots.”<sup><a class="footnote-reference" id="footnote-reference-15" href="#footnote-15">15</a></sup> Successful connection shots should have the same camera position as the auxiliary imagery and the same even illumination as the photogrammetry set. When processing the photo set in software such as <i>Metashape</i>, it is fundamental for future integration that connection shots, along with all the other photos from which the 3D model is built, are aligned with the resulting 3D model in <i>Metashape</i>. This is an intentional side effect of the photogrammetric process: it results in a set of photographs aligned with a model. Once a set of photographs is so aligned, any other images captured by the same camera in any of the same positions are then also automatically aligned with the model, by which we mean that the color information from any image can be projected onto the 3D model in a predictable and meaningful manner.</p>
 
-<figure>
+<figure id="fig04">
 <table style="width:95%">
 <col style="width:25%" />
 <col style="width:25%" />
@@ -160,7 +160,7 @@ Your browser does not support the video tag.
 
 <p id="p10">After creation of a 3D model whose source imagery includes an aligned connection shot for each type of auxiliary imagery, the actual integration of that imagery takes places in <i>Metashape</i>. This next stage will be discussed using RTI data as the practical example. Figure 4A shows the RTI connection shot used in building the 3D model; this is the actual image associated with the highlighted camera position in Figure 3A. It has the same camera position as the RTI shots, though keeps the even illumination required for photogrammetry. Figure 4B shows a source image from the RTI source image set; again, it is in the same position. Figures 4C and 4D show two exports from the <i>RTIViewer</i> after processing the RTI source image set into an interactive RTI file. Figure 4C is an export from the "Default” rendering mode of the <i>RTIViewer</i>. Figure 4D is an export from the <i>RTIViewer's</i> "Normals Visualization" rendering mode. The camera position does not change between the connection shot, the RTI source images, and the RTI exports. This means that all RTI source images and exports from the processed RTI file are also aligned with the 3D model. This is the essential relationship leveraged by the next step.</p>
 
-<figure>
+<figure id="fig05">
 <table style="width:95%">
 <col style="width:33.3%" />
 <col style="width:33.3%" />
@@ -204,7 +204,7 @@ Your browser does not support the video tag.
 
 <p id="p12">In essence then, the practitioner (1) overwrites the connection shot image file that was used to build the model with an alternate bitmap from the auxiliary imagery set, (2) initiates building of a UV texture map using only that new bitmap, and (3) exports the resulting UV texture for rendering in <i>Blender</i> or other software. Figure 6 shows three UV texture maps exported from <i>Metashape</i>. The same features are visible in the same locations in each UV texture map, indicating their alignment to each other. It is important to manage files to keep copies of any images that are overwritten. This management could be automated; however, the specifics of how files are managed within any one operating system or scripting environment lie beyond the scope of this article.</p>
 
-<figure>
+<figure id="fig07">
 <table style="width:70%">
 <col style="width:39%" />
 <col style="width:61%" />
@@ -230,28 +230,28 @@ Your browser does not support the video tag.
 
 <p id="p15" class="textindent0"><i>Blender</i> is a powerful tool for creating and viewing 3D models, one that has the distinct advantage of being freely available and supported by an active user community. In scientific applications, <i>Blender</i> can serve as a flexible virtual environment for aggregating data and then rendering visualizations that support documentation and analysis.<sup><a class="footnote-reference" id="footnote-reference-17" href="#footnote-17">17</a></sup> The visualizations <i>Blender</i> creates can incorporate simple blending of UV textures collected according to the workflow we have described. These UV textures can be combined with non-photorealistic rendering methods to highlight particular aspects of an object. All such visualizations can be incorporated into an animated presentation (Fig. 2), which can facilitate effective communication. Creating animations of this sort is a particular strength of <i>Blender</i>.</p>
 
-<figure>
+<figure id="fig08">
 <img src="images/fig08.jpg" />
 <figcaption>Figure 8. 3D model rendered with three blended UV textures: RTI "Normals Visualization", MBI, and photorealistic. Artificial lighting is cast over the 3D model to emphasize exposed chisel marks and the partially extant plaster surfaces.</figcaption>
 </figure>
 
 <p id="p16">Figure 8 shows one possible output from the integration of multiple sources of imagery with a 3D model that can be achieved in <i>Blender</i>. The shadow that highlights surface variation is the result of casting artificial light over the model in <i>Blender</i>. The overall purple hue seen here comes from mixing in the “Normals Visualization” exported from the <i>RTIViewer,</i> as seen previously in Figures 4D, 5C, and 6C. The prominent white patches show the presence of Egyptian Blue pigment; this is the same MBI spectral data shown in a different form in Figure 7. The photorealistic colors of the surface are lightly mixed in and are most clearly seen in Figure 8 in the area of the shoulder, the upper edge of the extended wing, and the profile eye. This is essentially the same color data seen in Figure 4A. Figure 8 is therefore an artificially rendered image that takes advantage of all aspects of the integrated digital output of the current workflow: the casting of virtual shadow on a 3D model and the integration of three sources of color data via aligned UV textures.</p>
 
-<figure>
+<figure id="fig09">
 <img src="images/fig09.png" />
 <figcaption>Figure 9. Detail of 3D model rendered with two blended UV textures: RTI "Normals Visualization" and photorealistic colors. Artificial lighting is cast over the tilted 3D model.</figcaption>
 </figure>
 
 <p id="p17">It is important to note again that Figure 8 is only one possible rendering of the integration of photogrammetry, RTI, and MBI. Figure 9 is a detail towards the left edge of the object where Isis' body is best preserved. It drops out the VIL UV texture and combines photorealistic colors, the <i>RTIViewer</i> “Normals Visualization,” and artificial lighting in <i>Blender</i> so as to create virtual shadows on the artificially colored model in a tilted perspective. This highlights the three-dimensional aspect of the painted dots that appear white in Figure 9. The greater amount of shadow that they produce indicates their higher relief in comparison to the lines that delineate the body and decorative features of the depicted clothing.</p>
 
-<figure>
+<figure id="fig10">
 <img src="images/fig10.png" />
 <figcaption>Figure 10. Screenshot of <i>Blender</i>’s interface showing three different renderings of the same object. Top: 3D model using <i>Blender’s</i> default MATCAP rendering. Bottom left: <i>RTI Viewer</i> “Normals Visualization” UV texture used as color data. Bottom right: rendered  photorealistic UV texture with artificial raking light.</figcaption>
 </figure>
 
 <p id="p18">Figures 8 and 9 are the result of manipulation of digital resources in <i>Blender</i>. Some of the stages of using that software are now illustrated so that they can be adopted by anyone familiar with it or with other 3D-capable software suites. Figure 10 shows three renderings of the object as seen in a screenshot from <i>Blender</i>. The "Normals Visualization" exported from the <i>RTIViewer</i> is used as a UV texture on the bottom left. The photorealistic UV texture is used for rendering on the bottom right. At the top is the 3D model tilted and rendered using <i>Blender’s</i> default MATCAP mode to indicate surface variation. Within <i>Blender</i>, multiple UV textures and multiple views of an object can be seen at once and manipulated independently.</p>
 
-<figure>
+<figure id="fig11">
 <img src="images/fig11.png" />
 <figcaption>Figure 11. Screenshot of <i>Blender’s</i> interface, with the top pane showing the arrangement of <i>Blender</i> nodes that produced the rendering in Figure 8.</figcaption>
 </figure>
@@ -260,7 +260,7 @@ Your browser does not support the video tag.
 
 <p id="p20"><i>Blender</i> has the potential for an essentially infinite variety of node structures and other techniques that can be used to visualize, combine, and enhance the data obtained from each imaging technique. When considering the uses of the workflow described here, it has been useful that rendering 3D models in <i>Blender</i> is interactive and that the rendered model can respond to many user-initiated changes to the output in near real-time even with relatively inexpensive hardware. The display of individual UV textures on a 3D model from different sources of imagery is essentially instant. Alternatively, UV textures can be mixed together and this also happens quickly. Mixing of textures is particularly useful when combining color and non-color data. For example, we have successfully experimented with using overall color data from the integrated imagery sources while configuring <i>Blender</i> to integrate the RTI normal map into the rendering of shadows. This approach is a standard technique in computer animation. All UV textures can also be combined with non-color data derived from the 3D model itself. This technique can usefully involve using nodes such as Blender's implementation of Fresnel or "Pointiness" — the latter a colloquial term for degree of convexity. Again, these are well known techniques in computer animation that can be adapted to scientific analysis and visualization. In many cases the processing is speedy. All the individual images shown in this article can be rendered by Blender to high quality - by which we mean that the results effectively communicate aspects of surface variation - in just a few seconds each on a 2015 Macintosh iMac with 4 Gigahertz Intel Core I7 processor and 32 Gig of RAM. This is not an exceptionally powerful computer by current standards, which we believe is a factor that again makes this workflow accessible and usable in many circumstances. Rendering times are of course variable, depending on software settings and hardware capability, so that individual experience will vary.</p>
 
-<figure>
+<figure id="fig12">
 <table style="width:60%">
 <col style="width:50%" />
 <col style="width:50%" />
